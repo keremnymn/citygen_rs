@@ -1,0 +1,17 @@
+[package]
+name = "citygen_rs"
+version = "0.0.0"
+description = "Rust implementation of procedural city generation"
+authors = ["Kerem Nayman"]
+license = ""
+repository = ""
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+geo = "0.26.0"
+geojson = "0.24.1"
+approx = "0.5.1"
+rand = "0.8.5"
+noise = "0.8.2"
