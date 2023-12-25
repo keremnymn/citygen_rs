@@ -31,6 +31,13 @@ pub fn main() {
         let severed_val = serde_json::Value::Bool(segment.q.severed);
         props.insert("severed".to_string(), severed_val.into());
 
+        let highway_val = if segment.q.highway.is_some() {
+            serde_json::Value::Bool(segment.q.highway.unwrap())
+        } else {
+            serde_json::Value::Bool(false)
+        };
+        props.insert("highway".to_string(), highway_val.into());
+
         let feature = Feature {
             bbox: None,
             geometry: Some(line_string_geometry),
